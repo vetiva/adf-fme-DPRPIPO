@@ -121,7 +121,10 @@
 
         form.style.display = "none";
         success.style.display = "block";
-        window.location.assign(data.redirectUrl || "https://ipo.vetiva.com/");
+        const redirectUrl = data.redirectUrl || "https://ipo.vetiva.com/";
+        window.setTimeout(() => {
+          window.location.assign(redirectUrl);
+        }, 2800);
       } catch (_error) {
         showError("Network error. Please check your connection and try again.");
         submitBtn.disabled = false;
