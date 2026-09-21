@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Opportunity Initiative</title>
+  <meta name="description" content="A student opportunity initiative supported by the Aliko Dangote Foundation and the Ministry of Education." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23085491'/%3E%3Cpath d='M15 32 32 14l17 18-17 18Z' fill='%23f4a000'/%3E%3Cpath d='m32 14 17 18-17 18Z' fill='%23ed0039'/%3E%3Cpath d='m15 32 17-18 8 9Z' fill='%2300945b'/%3E%3C/svg%3E" />
+  <style>
+    :root{--ink:#073966;--navy:#085491;--navy-deep:#063b69;--orange:#f4a000;--red:#ed0039;--green:#00945b;--canvas:#f3f8fc;--white:#fff;--muted:#607488;--line:#d8e4ed;--cream:#f7fafc}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream)}
+    .page{min-height:100vh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(420px,.9fr);position:relative;overflow:hidden}
+    .story{padding:38px clamp(28px,5vw,78px) 50px;display:flex;flex-direction:column;min-height:100vh;position:relative;background:linear-gradient(150deg,#ffffff 0%,var(--canvas) 72%,#edf5fa 100%)}
+    .story:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(8,84,145,.12);border-radius:50%;left:-210px;bottom:-180px;box-shadow:0 0 0 60px rgba(244,160,0,.05),0 0 0 120px rgba(0,148,91,.035)}
+    .logos{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}.brand-left{display:flex;align-items:center;gap:18px}.logo{display:flex;align-items:center}.logo img{display:block;object-fit:contain}.logo-adf{width:250px;height:auto}.logo-fme{width:82px;height:82px}.offer-logo{width:104px;height:104px;object-fit:contain;flex:0 0 auto}.divider{height:56px;width:1px;background:#b7c4bf}
+    .hero{margin:auto 0;max-width:690px;position:relative;z-index:1;padding:64px 0}.eyebrow{display:inline-flex;align-items:center;gap:9px;font:700 12px Manrope;letter-spacing:.13em;text-transform:uppercase;color:var(--green)}.eyebrow:before{content:"";width:34px;height:3px;background:var(--orange)}
+    h1{font:800 clamp(46px,6.2vw,88px)/.98 Manrope;margin:22px 0 26px;letter-spacing:-.055em;max-width:780px}.highlight{color:var(--red);position:relative;white-space:nowrap}.highlight:after{content:"";position:absolute;height:8px;border-radius:8px;background:var(--orange);left:0;right:0;bottom:-5px;transform:rotate(-1deg);opacity:.9}
+    .intro{font-size:16px;line-height:1.62;color:#3f5870;max-width:680px;margin:1.5cm 0 34px;text-align:justify;text-justify:inter-word}.intro p{margin:0 0 16px}.intro p:last-child{margin-bottom:0}.trust{display:flex;gap:28px;flex-wrap:wrap}.trust span{display:flex;align-items:center;gap:9px;font-weight:600;font-size:14px}.check{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#dff3eb;color:var(--green);font-weight:800}
+    .note{font-size:12px;color:#718499;position:relative;z-index:1;max-width:620px}.form-side{background:linear-gradient(145deg,var(--navy-deep),var(--navy));display:grid;place-items:center;padding:40px;position:relative}.form-side:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(244,160,0,.24),transparent 27%),radial-gradient(circle at 12% 88%,rgba(237,0,57,.18),transparent 25%)}
+    .form-card{width:min(100%,520px);background:#fff;border-radius:28px;padding:clamp(28px,4vw,48px);position:relative;border-top:6px solid var(--orange);box-shadow:0 28px 80px rgba(2,35,63,.28)}.step{font:700 12px Manrope;color:var(--green);letter-spacing:.12em;text-transform:uppercase}.form-card h2{font:800 clamp(28px,3vw,38px)/1.12 Manrope;margin:12px 0 10px;letter-spacing:-.03em}.sub{color:var(--muted);line-height:1.5;margin:0 0 28px}
+    .field{margin-bottom:18px}.field label{display:block;font-weight:700;font-size:14px;margin-bottom:8px}.field input{width:100%;height:54px;border:1px solid var(--line);border-radius:12px;padding:0 15px;font:500 16px "DM Sans";color:var(--ink);background:#f9fbfd;outline:none;transition:.2s}.field input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(8,84,145,.12);background:white}.field input::placeholder{color:#93a3b1}
+    button{width:100%;height:58px;border:0;border-radius:14px;background:var(--orange);color:#082f51;font:800 16px Manrope;cursor:pointer;box-shadow:0 12px 24px rgba(244,160,0,.25);transition:.2s;display:flex;align-items:center;justify-content:center;gap:12px}button:hover:not(:disabled){transform:translateY(-2px);background:#ffb31a}button:active:not(:disabled){transform:translateY(0)}button:disabled{opacity:.72;cursor:wait}button svg{width:19px}.privacy{font-size:12px;color:#718499;text-align:center;line-height:1.45;margin:16px 0 0}.form-error{display:none;margin:0 0 16px;padding:12px 14px;border-radius:12px;background:#fdecee;color:#9f1239;font-size:14px;line-height:1.45}.success{display:none;text-align:center;padding:48px 6px}.success .icon{width:66px;height:66px;border-radius:50%;background:#dff3eb;color:var(--green);display:grid;place-items:center;font-size:32px;margin:0 auto 18px}.success h2{margin-bottom:12px}.success p{color:var(--muted);line-height:1.5}
+    @media(max-width:900px){.page{grid-template-columns:1fr}.story{min-height:auto;padding:28px 24px 42px}.hero{padding:70px 0 56px}.form-side{padding:34px 20px 50px}.form-card{max-width:600px}.note{display:none}}
+    @media(max-width:520px){.logos{gap:8px}.brand-left{gap:8px}.logo-adf{width:145px}.logo-fme{width:52px;height:52px}.offer-logo{width:68px;height:68px}.divider{height:36px}.hero{padding:58px 0 44px}h1{font-size:44px}.highlight{white-space:normal}.trust{gap:14px}.trust span{width:100%}.form-card{padding:28px 22px;border-radius:22px}.form-side{padding-inline:14px}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="story">
+      <header class="logos" aria-label="Initiative partners">
+        <div class="brand-left">
+          <div class="logo"><img class="logo-adf" src="/adf-logo.png" alt="Aliko Dangote Foundation"></div>
+          <span class="divider" aria-hidden="true"></span>
+          <div class="logo"><img class="logo-fme" src="/fme-logo.png" alt="Federal Ministry of Education"></div>
+        </div>
+        <img class="offer-logo" src="/dangote-refinery-logo.png" alt="Dangote Petroleum Refinery">
+      </header>
+      <div class="hero">
+        <span class="eyebrow">Student Opportunity Initiative</span>
+        <h1>A brighter future starts with <span class="highlight">one step.</span></h1>
+        <div class="intro">
+          <p>The Student Opportunity Initiative is a collaboration between the Aliko Dangote Foundation (“ADF”) and the Federal Ministry of Education, designed to promote broader participation and financial inclusion among students across tertiary institutions in the Federal Republic of Nigeria.</p>
+          <p>Under the initiative, eligible students will have the opportunity to receive 10 shares at no cost, funded by the Aliko Dangote Foundation. To qualify, a student must purchase a minimum of 10 shares through the approved subscription channel. Upon successful verification of the student’s eligibility and subscription, the Aliko Dangote Foundation will provide the student with an additional 10 shares free of payment.</p>
+          <p>The initiative is intended to provide students across Nigeria’s tertiary institutions with an opportunity to become shareholders and, more broadly, to encourage early participation in Nigeria’s capital market.</p>
+        </div>
+      </div>
+    </section>
+    <aside class="form-side">
+      <div class="form-card">
+        <form id="student-form">
+          <span class="step">Get started</span>
+          <h2>Enter your student details</h2>
+          <p class="sub">Please use the same information shown on your university records.</p>
+          <p class="form-error" id="form-error" role="alert"></p>
+          <div class="field"><label for="university">Name of University</label><input id="university" name="university" autocomplete="organization" placeholder="e.g. University of Lagos" required></div>
+          <div class="field"><label for="matric">Matric Number</label><input id="matric" name="matric" autocomplete="off" placeholder="Enter your matric number" required></div>
+          <div class="field"><label for="surname">Surname</label><input id="surname" name="surname" autocomplete="family-name" placeholder="Enter your surname" required></div>
+          <button type="submit" id="submit-btn">
+            <span id="submit-label">Click to Continue</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="privacy">For information and verification purposes. By continuing, you confirm that the details provided are accurate. Terms and privacy information will be added before launch.</p>
+        </form>
+        <div class="success" id="success" role="status">
+          <div class="icon">✓</div>
+          <h2>Details confirmed</h2>
+          <p>Redirecting you to Vetiva IPO to complete your subscription…</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+  <script>
+    const form = document.getElementById("student-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const submitLabel = document.getElementById("submit-label");
+    const formError = document.getElementById("form-error");
+    const success = document.getElementById("success");
+
+    function showError(message) {
+      formError.textContent = message;
+      formError.style.display = "block";
+    }
+
+    function clearError() {
+      formError.textContent = "";
+      formError.style.display = "none";
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      clearError();
+      submitBtn.disabled = true;
+      submitLabel.textContent = "Verifying…";
+
+      const payload = {
+        university: form.university.value.trim(),
+        matric: form.matric.value.trim(),
+        surname: form.surname.value.trim(),
+      };
+
+      try {
+        const response = await fetch("/api/v1/student-applications", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok || !data.ok) {
+          showError(data.message || "We could not verify your details. Please try again.");
+          submitBtn.disabled = false;
+          submitLabel.textContent = "Click to Continue";
+          return;
+        }
+
+        form.style.display = "none";
+        success.style.display = "block";
+        window.location.assign(data.redirectUrl || "https://ipo.vetiva.com/");
+      } catch (_error) {
+        showError("Network error. Please check your connection and try again.");
+        submitBtn.disabled = false;
+        submitLabel.textContent = "Click to Continue";
+      }
+    });
+  </script>
+</body>
+</html>
